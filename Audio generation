@@ -1,0 +1,11 @@
+from gtts import gTTS
+try:
+  tts = gTTS(new_caption)
+  tts.save('/content/drive/MyDrive/ML/audio.mp3')
+except Exception as e:
+    print('Error generating audio: ',e)
+import os
+os.system('mpg123 audio.mp3')
+
+from IPython.display import Audio
+Audio('/content/drive/MyDrive/ML/audio.mp3')
